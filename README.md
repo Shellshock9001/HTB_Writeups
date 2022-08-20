@@ -6,4 +6,5 @@ This will be my personal write ups for Retired HackTheBox machines.
 
 Lame Write
 
-![Charmander.jpg](HTB%20e584550d016c47ef870abac1dc52cce5/Charmander.jpg)
+
+![Charmander](https://user-images.githubusercontent.com/110210595/185728920-a60f2a2d-7e0a-4051-8d11-70082feef738.jpg)
