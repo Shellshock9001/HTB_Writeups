@@ -22,7 +22,7 @@ You can choose your own color scheme to match your needs.
 
 
 
-```html
+```python
 <html>
     <style scoped>
         h1 {color:red;}
