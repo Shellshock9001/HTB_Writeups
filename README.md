@@ -5,7 +5,9 @@
 
 [Twitter](https://twitter.com)
 
-\https://img.shields.io/badge/hotjar-FD3A5C?style=for-the-badge&logo=hotjar&logoColor=white
+\<img src"{charmander}" /> 
+
+![charmander badge](https://user-images.githubusercontent.com/110210595/185779721-84ef752d-1cb5-49d0-b8e8-0d668a4fcaab.jpg)
 
 [1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"
 
