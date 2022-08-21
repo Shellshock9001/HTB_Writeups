@@ -3,7 +3,6 @@
 ## You'll see folders containing the write ups to the machine. I will only post retired machines here. 
 
 [1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"
-
 [Twitter](https://twitter.com)
 
 [Twitter]: https://twitter.com "twitter lifestyles"
