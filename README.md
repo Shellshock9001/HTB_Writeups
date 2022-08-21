@@ -22,18 +22,3 @@ You can choose your own color scheme to match your needs.
 
 
 
-```python
-<html>
-    <style scoped>
-        h1 {color:red;}
-        p {color:blue;} 
-    </style>
-    <video id="v" autoplay> </video>
-    <script>
-        if (navigator.battery.charging) {
-            console.log("Device is charging.")
-        }
-    </script>
-</html>
-
-```
