@@ -10,7 +10,7 @@ You can choose your own color scheme to match your needs.
 ## Color Scheme
 
 - Brown
-  * Syntax           \###I know it looks yellow in the pdf but it's because of the pdf export. It's brown
+  * Syntax | I know it looks yellow in the pdf but it's because of the pdf export. It's brown
 - Blue
   * Title for specific lesson
 - Purple
