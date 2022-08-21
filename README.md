@@ -18,4 +18,4 @@
 \
 
 ![image]({![pokeball](https://user-images.githubusercontent.com/110210595/185780271-bd471345-8f75-443e-ba0b-6c20302ec3cf.jpg)
-}) https://img.shields.io/badge/WakaTime-000000?style=for-the-badge&logo=WakaTime&logoColor=white
+}) `https://img.shields.io/badge/WakaTime-000000?style=for-the-badge&logo=WakaTime&logoColor=white`
