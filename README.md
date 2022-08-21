@@ -5,7 +5,8 @@
 
 [Twitter](https://twitter.com)
 
-[Twitter]: http://twitter.com "twitter lifestyles"
+[Twitter]: <http://twitter.com> "twitter lifestyles"
+
 [1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"
 
 121
