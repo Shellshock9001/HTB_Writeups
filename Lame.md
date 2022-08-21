@@ -1,2 +1,0 @@
-# HTB_Writeups
-
