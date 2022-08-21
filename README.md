@@ -5,4 +5,4 @@
 
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![Twitter](twitter.com)
+[![Twitter](https://twitter.com)
