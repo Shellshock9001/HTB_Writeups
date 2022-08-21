@@ -8,3 +8,6 @@ unfortunately this can lead to skipping other information because of speed readi
 You can choose your own color scheme to match your needs. 
 
 ## Color Scheme
+
+- Brown
+  * Syntax
