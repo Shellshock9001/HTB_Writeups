@@ -1,3 +1,2 @@
-# HTB_Writeups
+# HTB_Writeups - Lame
 
-Lame
