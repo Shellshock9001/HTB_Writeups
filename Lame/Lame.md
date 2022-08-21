@@ -73,7 +73,7 @@ the /usr/bin/nmap suid \
 I head over to https://gtfobins.github.io/ and search for nmap \
 I cd /usr/bin where the suid is located. \
 I start off with shell code (a) and nothing happened. So I keep going down the list. \
-Shell (b) worked! \
+Shell (b) worked!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814276-6c882b38-ce84-4183-a828-49b30153bc7a.png)
 
