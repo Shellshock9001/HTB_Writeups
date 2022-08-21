@@ -4,7 +4,6 @@
 
 
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
 [![Twitter][Twitter](https://twitter.com)
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
