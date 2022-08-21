@@ -4,6 +4,6 @@
 
 
 
-[![Twitter][Twitter](https://twitter.com)
+[Twitter](https://twitter.com)
 
 
