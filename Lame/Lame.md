@@ -1,9 +1,9 @@
 # Lame - 10.10.10.3
 
 Started off with a nmap scan
-```
+``
 nmap -Pn -T5 -sV -sC -A -p- -oN lame_nmap.txt 10.10.10.3
-```
+``
 While that was scanning I went to go check out to see if the website is up. But I don't get anything back and you'll see why when the results are done.
 We get back some nice info to start us off.
 Port 80 isn't open so there was no site for me to check.\
@@ -20,7 +20,7 @@ I see that smb is open. 139/445. I run ``smbmap -H 10.10.10.`` and get back some
 ![image](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
 
 we can see that tmp is READ, WRITE. Lets login and see what we can find.\
-I use ``` markdown smbclient \\\\10.10.10.3\\tmp markdown ``` and we get a hit. \
+I use ``smbclient \\\\10.10.10.3\\tmp markdown`` and we get a hit. \
 I use ```markdown\  ls```  to see what we can find. Unfortunately there is nothing here either.\
 We could use put and get files here but there is no port 80 open for us to execute the files to gain a shell from here. Some bad luck but we got more info so lets keep looking.
 
