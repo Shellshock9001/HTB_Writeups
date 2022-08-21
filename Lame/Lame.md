@@ -20,9 +20,9 @@ I see that smb is open. 139/445. I run ``` markdown smbmap -H 10.10.10.3``` and 
 ![image](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
 
 we can see that tmp is READ, WRITE. Lets login and see what we can find.\
-I use ``` markdown smbclient \\\\10.10.10.3\\tmp ``` and we get a hit. \
-I use ``` markdown  
-ls``` to see what we can find. Unfortunately there is nothing here either.\
+I use ``` markdown smbclient \\\\10.10.10.3\\tmp``` and we get a hit. \
+I use ```markdown  
+ls```  to see what we can find. Unfortunately there is nothing here either.\
 We could use put and get files here but there is no port 80 open for us to execute the files to gain a shell from here. Some bad luck but we got more info so lets keep looking.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814036-42698e61-b4e6-4be4-84de-df540f801f33.png)
