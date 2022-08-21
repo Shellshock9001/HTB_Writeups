@@ -11,3 +11,4 @@ But there was other ports open such as port 21 with the version number of vsftpd
 CVE-2011-2523) I couldn't get it to work though. So I moved on. If you can't get something to work, don't spend to much time on it. Look at the next route you can take and if you get stuck.\
 again then go back and try to repeat your steps to make sure you didn't make a typo somewhere.
 
+![image](https://user-images.githubusercontent.com/110210595/185813986-3fe1ff10-9b0e-46e6-873a-29d79fd5341e.png)
