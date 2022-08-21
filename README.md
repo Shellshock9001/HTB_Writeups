@@ -19,6 +19,3 @@ You can choose your own color scheme to match your needs.
   * Vulnerability version
 - White
   * Plain text
-
-
-
