@@ -5,7 +5,7 @@
 
 [Twitter](https://twitter.com)
 
-![charmander badge](https://user-images.githubusercontent.com/110210595/185779799-41ae4431-e6eb-4af9-9b14-5761765dda0e.jpg)
+![charmander](https://user-images.githubusercontent.com/110210595/185779799-41ae4431-e6eb-4af9-9b14-5761765dda0e.jpg)
 
 
 
