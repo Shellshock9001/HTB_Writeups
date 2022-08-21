@@ -26,7 +26,7 @@ We could use put and get files here but there is no port 80 open for us to execu
 ![image](https://user-images.githubusercontent.com/110210595/185814036-42698e61-b4e6-4be4-84de-df540f801f33.png)
 
 I go back to the nmap results and see port 3632 is open and it gave us the version of application running. distccd v1\
-I go to google and search for "distccd v1 exploit" first link brings us to https://gist.github.com/DarkCoderSc/4dbf6229a93e75c3bdf6b467e67a9855
+I go to google and search for "distccd v1 exploit" first link brings us to https://gist.github.com/DarkCoderSc/4dbf6229a93e75c3bdf6b467e67a9855 \
 after reading the exploit it seems to generate a random alpha numeric string. Reads the string. And looks for the trigger exploit which is command, host, port\
 If it is able to connect to the host it will send the payload and hopefully give us a reverse shell.
 
