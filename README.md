@@ -79,8 +79,3 @@ Shell (b) worked!
 we can now cd /root and see what is there which is the root.txt flag!
 we have successfully rooted this box!
  
-
- 
-
- 
-
