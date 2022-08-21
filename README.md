@@ -10,4 +10,12 @@ You can choose your own color scheme to match your needs.
 ## Color Scheme
 
 - Brown
-  * Syntax
+  * Syntax              ### I know it looks yellow in the pdf but it's because of the pdf export. It's brown
+- Blue
+  * Title for specific lesson
+- Purple
+  * Important to consider involving the syntax, lesson, program version
+- Green
+  * Vulnerability version
+- White
+  * Plain text
