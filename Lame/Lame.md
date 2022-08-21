@@ -16,9 +16,7 @@ again then go back and try to repeat your steps to make sure you didn't make a t
 ![image](https://user-images.githubusercontent.com/110210595/185813993-63e2b007-2ec3-4ea1-953e-a9c2db6975a5.png)
 
 I see that smb is open. 139/445. I run
-```
-smbmap -H 10.10.10.
-```
+`` `smbmap -H 10.10.10.` ``
 and get back some users.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
