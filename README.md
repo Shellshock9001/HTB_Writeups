@@ -5,4 +5,6 @@
 
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![Twitter](https://twitter.com)
+[![Twitter][Twitter](https://twitter.com)
+
+[![LinkedIn][linkedin-shield]][linkedin-url]
