@@ -69,3 +69,17 @@ I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Se
 
 ![image](https://user-images.githubusercontent.com/110210595/185814242-ca1ef7ad-efb5-47bd-8b56-bedfb902f6c7.png)
 
+the /usr/bin/nmap suid \
+I head over to https://gtfobins.github.io/ and search for nmap \
+I cd /usr/bin where the suid is located. \
+I start off with shell code (a) and nothing happened. So I keep going down the list. \
+Shell (b) worked! \
+
+![image](https://user-images.githubusercontent.com/110210595/185814276-6c882b38-ce84-4183-a828-49b30153bc7a.png)
+
+we can now cd /root and see what is there which is the root.txt flag!
+we have successfully rooted this box!
+
+![image](https://user-images.githubusercontent.com/110210595/185814294-98c871d4-6e47-46cd-b258-79796039924c.png)
+
+![image](https://user-images.githubusercontent.com/110210595/185814307-20443976-cd82-46bb-8929-1e17fb164988.png)
