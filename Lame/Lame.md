@@ -17,14 +17,14 @@ and get back some users.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
 
-we can see that tmp is READ, WRITE. Lets login and see what we can find.<br>
+we can see that tmp is <em><strong>READ, WRITE</em></strong>. Lets login and see what we can find.<br>
 I use ``` smbclient \\\\10.10.10.3\\tmp ``` and we get a hit.<br>
 I use ``` ls ```  to see what we can find. Unfortunately there is nothing here either.<br>
 We could use put and get files here but there is no port 80 open for us to execute the files to gain a shell from here. Some bad luck but we got more info so lets keep looking.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814036-42698e61-b4e6-4be4-84de-df540f801f33.png)
 
-I go back to the nmap results and see port 3632 is open and it gave us the version of application running.  <em><strong>distccd v1</em></strong><br>
+I go back to the nmap results and see port 3632 is open and it gave us the version of application running. <em><strong>distccd v1</em></strong><br>
 I go to google and search for "<em><strong>distccd v1 exploit</em></strong>" first link brings us to https://gist.github.com/DarkCoderSc/4dbf6229a93e75c3bdf6b467e67a9855<br>
 after reading the exploit it seems to generate a random alpha numeric string. Reads the string. And looks for the trigger exploit which is <em><strong>command, host, port</em></strong><br>
 If it is able to connect to the host it will send the payload and hopefully give us a reverse shell.
@@ -68,15 +68,15 @@ I use ./linpeas.sh and it kicks off no problem. We get back a lot of results. Se
 
 ![image](https://user-images.githubusercontent.com/110210595/185814242-ca1ef7ad-efb5-47bd-8b56-bedfb902f6c7.png)
 
-the /usr/bin/nmap suid<br>
-I head over to https://gtfobins.github.io/ and search for nmap<br>
+the <em><strong>/usr/bin/nmap suid</em></strong><br>
+I head over to https://gtfobins.github.io/ and search for <em><strong>nmap</em></strong><br>
 I cd /usr/bin where the suid is located.<br>
 I start off with shell code (a) and nothing happened. So I keep going down the list.<br>
 Shell (b) worked!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814276-6c882b38-ce84-4183-a828-49b30153bc7a.png)
 
-we can now cd /root and see what is there which is the root.txt flag!<br>
+we can now cd /root and see what is there which is the <em><strong>root.txt</em></strong> flag!<br>
 we have successfully rooted this box!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814294-98c871d4-6e47-46cd-b258-79796039924c.png)
