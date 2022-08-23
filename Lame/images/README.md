@@ -1,7 +1,5 @@
 # Lame Images
 
-![Lame_Card](https://user-images.githubusercontent.com/110210595/186282691-877b3ac5-ab36-41e1-94af-2635af6bc9fc.png)
-
 ![image](https://user-images.githubusercontent.com/110210595/186279936-8afa6919-9add-4034-bbe4-2829a8d84580.png)
 
 ![image](https://user-images.githubusercontent.com/110210595/186279953-2fb886f4-5574-4cb1-b27b-306826c0b9ca.png)
