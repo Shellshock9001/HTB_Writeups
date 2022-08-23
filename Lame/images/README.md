@@ -1,6 +1,6 @@
 # Lame Images
 
-![Lame_Card](https://user-images.githubusercontent.com/110210595/186283219-ea76c03a-a1d3-4794-a3f3-d4d9b0730363.png)
+![Lame_Card](https://user-images.githubusercontent.com/110210595/186286172-8b4a6ab3-276b-4425-9431-c9c845053e6e.png)
 
 ![image](https://user-images.githubusercontent.com/110210595/186279936-8afa6919-9add-4034-bbe4-2829a8d84580.png)
 
