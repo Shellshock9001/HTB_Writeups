@@ -1,5 +1,7 @@
 # Lame - 10.10.10.3
-### Don't forget to check out the Lame.pdf file. 
+### Don't forget to check out the Lame.pdf file. To see it in color :)
+
+![Lame_Card](https://user-images.githubusercontent.com/110210595/186282161-b8b4ae39-f2d6-4317-a040-4e61378ac8aa.png)
 
 Started off with a nmap scan `nmap -Pn -T5 -sV -sC -A -p- -oN lame_nmap.txt 10.10.10.3`<br>
 While that was scanning I went to go check out to see if the website is up. But I don't get anything back and you'll see why when the results are done.
