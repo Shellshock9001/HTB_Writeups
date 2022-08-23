@@ -23,8 +23,6 @@
 
 ![image](https://user-images.githubusercontent.com/110210595/186280127-2e9c0379-cf61-4a2b-960e-fdb45b73c42a.png)
 
-![image](https://user-images.githubusercontent.com/110210595/186280151-227efc87-203e-4cee-93d7-f554acb88a75.png)
-
 ![Shellshocked](https://user-images.githubusercontent.com/110210595/186280178-cb30a837-8e63-4c4c-9800-c85934cc0ded.png)
 
 ![image](https://user-images.githubusercontent.com/110210595/186280195-f349b931-70e6-47ae-ba72-77eb1769c8f0.png)
