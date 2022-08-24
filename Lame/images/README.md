@@ -2,8 +2,6 @@
 
 ![Lame_card](https://user-images.githubusercontent.com/110210595/186286198-73fd3f16-035c-440c-a61e-be70d3ba8103.png)
 
-![Lame_Card2](https://user-images.githubusercontent.com/110210595/186286450-e4c38c63-6d28-4478-aeff-ce9f086a4825.PNG)
-
 ![image](https://user-images.githubusercontent.com/110210595/186279936-8afa6919-9add-4034-bbe4-2829a8d84580.png)
 
 ![image](https://user-images.githubusercontent.com/110210595/186279953-2fb886f4-5574-4cb1-b27b-306826c0b9ca.png)
