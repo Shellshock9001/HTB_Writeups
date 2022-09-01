@@ -32,7 +32,8 @@ Used `get Groups.xml`<br>
 ![Groups_xml_results](https://user-images.githubusercontent.com/110210595/187825600-fece54cb-5614-46d0-afd7-846d569fc7ff.PNG)
 
 
-We could see <em><strong>cpassword</em></strong> = "edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ"
+We could see<br>
+<em><strong>cpassword</em></strong> = "edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ"
 <em><strong>userName</em></strong> = active.htb\SVC_TGS<br>
 Looks like we definitely found some credentials. But I'm not sure what format that cpassword is. I go to https://book.hacktricks.xyz/welcome/readme and do some research. Looks like cpassword is used in a Groups.xml file which is what we found. Didn't see much else so I used the same site https://book.hacktricks.xyz/welcome/readme but this time searched for Groups.xml file and we find much more info on it. Looks to be a cached GPP Password. 
 https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation?q=Groups.xml#cached-gpp-pasword<br>
@@ -47,6 +48,19 @@ The password is <em><strong>GPPstillStandingStrong2k18</em></strong><br>
 Now we have -<br> 
 UserName = <em><strong>active.htb\SVC_TGS</em></strong><br>
 Password = <em><strong>GPPstillStandingStrong2k18</em></strong><br>
+
+# Backtrack - smbclient Users
+I remember there were other Users in the smbmap and saw <em><strong>Users</em></strong>. I went back to https://book.hacktricks.xyz/welcome/readme and typed in smbclient users and found a "List shared folders" sections. You can log in to the smbclient using a user parameter if you know the password. Which we do.<br>
+That section was actually only to list the shared files. Not connect. Scroll down a bit to Connect/List a shared folder. You'll see this is how to connect. I left the password out because I kept getting errors with it.<br>
+
+![smbclient_Users_errors](https://user-images.githubusercontent.com/110210595/187826348-922411ac-76f4-4b5a-a3e4-53b9c19f6c99.PNG)
+
+I used `smbclient -U SVC_TGS \\\\10.10.10.100\\Users`<br>
+
+![smbclient_Users_SVC_TGS_results](https://user-images.githubusercontent.com/110210595/187826416-57f0c5b8-729a-4d77-a917-02afde46da56.PNG)
+
+We see the <em><strong>SVC_TGS</em></strong> directory and `cd SVC_TGS` and `cd Desktop`<br> 
+We see the <em><strong>user.txt</em></strong> file.<br>
 
 
 
