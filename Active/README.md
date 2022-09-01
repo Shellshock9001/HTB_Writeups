@@ -78,7 +78,7 @@ Since I did an `exit` to cat out the <em><strong>user.txt</em></strong> flag we 
 I go back to https://book.hacktricks.xyz/network-services-pentesting/pentesting-kerberos-88#hacktricks-automatic-commands searching through port 88 and see that it's an authentication protocol with a secret password. Part of the <em><strong>Active Directory</em></strong> attacks.
 
 I see <em><strong>Entry_4</em></strong> with Creds option. Since we do have the username and password.<br>
-I use `GetUserSPNs.py -request -dc-ip {IP} active.htb/svc_tgs` I get an error :/ probably because the script isn't in the direct path.<br>
+I use `GetUserSPNs.py -request -dc-ip 10.10.10.100 active.htb/svc_tgs` I get an error :/ probably because the script isn't in the direct path.<br>
 I use `locate GetUserSPNs.py` find the file and renter the syntax.<br>
 `/usr/share/doc/python3-impacket/examples/GetUserSPNs.py -request -dc-ip 10.10.10.100 active.htb/svc_tgs` <br>
 
