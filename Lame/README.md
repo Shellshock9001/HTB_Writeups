@@ -54,6 +54,8 @@ I look around a bit and `cd /home` directory and do a `ls` and see what's there.
 
 ![image](https://user-images.githubusercontent.com/110210595/185814188-b2d3ad0a-a11d-4f7e-a4bc-49c2566b5fa1.png)
 
+![user_txt](https://user-images.githubusercontent.com/110210595/186280050-4c2d9a7e-9b61-4b18-9d51-f14d3659c34f.png)
+
 ![image](https://user-images.githubusercontent.com/110210595/185814191-f868ba55-884e-4c9e-ba39-267b4ee7455c.png)
 
 Next, let's head over to the tmp directory and try to transfer over some enumeration files like linpeas.sh<br>
