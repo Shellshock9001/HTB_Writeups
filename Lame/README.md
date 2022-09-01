@@ -63,11 +63,11 @@ On the victim machine ill be in the <em><strong>/tmp</em></strong> directory and
 The file gets transferred over no problem. I use `chmod +x linpeas.sh` making it an executable file.<br>
 I use `./linpeas.sh` and it runs no problem. We get back a lot of results. Several vulnerabilities, but one in particular catches my eye with the yellow red highlight.
 
-![image](https://user-images.githubusercontent.com/110210595/185814232-c92b51cf-c297-46b9-ad1f-ed45077f1d5d.png)
+![exploit_suggester_results_pt-1](https://user-images.githubusercontent.com/110210595/186280090-9325ff31-2274-4c8b-a279-f6133ef3a11b.png)
 
-![image](https://user-images.githubusercontent.com/110210595/185814233-174d7a35-f050-4533-acd5-6fc6f51f48a7.png)
+![[exploit_suggester_results_pt-2](https://user-images.githubusercontent.com/110210595/186280109-1ba8b1b6-6a8c-43ec-87f5-d5e0b7eac263.png)
 
-![image](https://user-images.githubusercontent.com/110210595/185814242-ca1ef7ad-efb5-47bd-8b56-bedfb902f6c7.png)
+![[exploit_suggester_results_pt-3](https://user-images.githubusercontent.com/110210595/186280119-1ee8d359-4e1a-4a25-8040-728189330987.png)
 
 <em><strong>/usr/bin/nmap suid</em></strong><br>
 I head over to https://gtfobins.github.io/ and search for <em><strong>nmap</em></strong><br>
