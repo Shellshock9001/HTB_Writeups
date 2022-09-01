@@ -3,9 +3,6 @@
 
 ![Lame_info_card](https://user-images.githubusercontent.com/110210595/187806371-c87c74bd-6111-458a-8cd7-62a899083d09.png)
 
-![image](https://user-images.githubusercontent.com/110210595/187806673-42df1db9-0325-496e-8870-e9efe4052782.png)
-
-
 Started off with a nmap scan `nmap -Pn -T5 -sV -sC -A -p- -oN lame_nmap.txt 10.10.10.3`<br>
 While that was scanning I went to go check out to see if the website is up. But I don't get anything back and you'll see why when the results are done.
 We get back some nice info to start us off.
@@ -13,9 +10,9 @@ Port 80 isn't open so there was no site for me to check.<br>
 But there was other ports open such as port 21 with the version number of <em><strong>vsftpd 2.3.4</em></strong> (This version of vsftpd is vulnerable to backdoor command executionCVE-2011-2523) I couldn't get it to work though. So I moved on. If you can't get something to work, don't spend to much time on it. Look at the next route you can take and if you get stuck.<br>
 again then go back and try to repeat your steps to make sure you didn't make a typo somewhere.
 
-![image](https://user-images.githubusercontent.com/110210595/185813986-3fe1ff10-9b0e-46e6-873a-29d79fd5341e.png)
+![nmap_scan_pt1](https://user-images.githubusercontent.com/110210595/186279936-8afa6919-9add-4034-bbe4-2829a8d84580.png)
 
-![image](https://user-images.githubusercontent.com/110210595/185813993-63e2b007-2ec3-4ea1-953e-a9c2db6975a5.png)
+![nmap_scan_pt2](https://user-images.githubusercontent.com/110210595/186279953-2fb886f4-5574-4cb1-b27b-306826c0b9ca.png)
 
 I see that smb is open. 139/445. I run `smbmap -H 10.10.10` and get back some users.
 
