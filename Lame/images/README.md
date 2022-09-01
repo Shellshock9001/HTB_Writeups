@@ -8,7 +8,7 @@
 
 ![smbmap_results](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
 
-![image](https://user-images.githubusercontent.com/110210595/186279990-d0c780e7-424c-43e0-b62f-eea7d5ccf836.png)
+![smbclient\tmp_results](https://user-images.githubusercontent.com/110210595/186279990-d0c780e7-424c-43e0-b62f-eea7d5ccf836.png)
 
 ![COWABUNGA](https://user-images.githubusercontent.com/110210595/186280016-5a9d0378-3c30-4f95-89e0-c68eea7c86d1.png)
 
