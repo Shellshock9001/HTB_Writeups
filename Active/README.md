@@ -62,5 +62,55 @@ I used `smbclient -U SVC_TGS \\\\10.10.10.100\\Users`<br>
 We see the <em><strong>SVC_TGS</em></strong> directory and `cd SVC_TGS` and `cd Desktop`<br> 
 We see the <em><strong>user.txt</em></strong> file.<br>
 
+![user_txt_found](https://user-images.githubusercontent.com/110210595/187826827-eeeb52cf-12c8-4d15-9772-234b136433e7.PNG)
 
+I use a `get user.txt`
+`cat user.txt`
+
+![user txt_results](https://user-images.githubusercontent.com/110210595/187826950-74ff1bbd-0926-492d-bf51-f0be10920c75.PNG)
+
+![COWABUNGA](https://user-images.githubusercontent.com/110210595/187826983-ec11c879-f2d1-40b5-bcd8-740f2f5e7239.png)
+
+We got the <em><strong>user.txt</em></strong> flag.<br>
+
+Since I did an `exit` to cat out the <em><strong>user.txt</em></strong> flag we have to log back in. But there is nothing here. I want to check out that kerberos now since we know we could log in svc_tgs.<br>
+
+I go back to https://book.hacktricks.xyz/network-services-pentesting/pentesting-kerberos-88#hacktricks-automatic-commands searching through port 88 and see that it's an authentication protocol with a secret password. Part of the <em><strong>Active Directory</em></strong> attacks.
+
+I see <em><strong>Entry_4</em></strong> with Creds option. Since we do have the username and password.<br>
+I use `GetUserSPNs.py -request -dc-ip {IP} active.htb/svc_tgs` I get an error :/ probably because the script isn't in the direct path.<br>
+I use `locate GetUserSPNs.py` find the file and renter the syntax.<br>
+`/usr/share/doc/python3-impacket/examples/GetUserSPNs.py -request -dc-ip 10.10.10.100 active.htb/svc_tgs` <br>
+
+![GetUserSPNs py_results](https://user-images.githubusercontent.com/110210595/187827380-36722399-7107-4d5a-8a90-d08a9cfba1a5.PNG)
+
+We get the Administrator kerberos ticket!<br>
+I copied the out put and put it into a text file called <em><strong>kerby.txt</em></strong><br>
+I used `john kerby.txt --wordlist=/usr/share/wordlists/rockyou.txt`<br>
+We cracked it.<br>
+
+![kerby_results](https://user-images.githubusercontent.com/110210595/187827540-1bba8868-cec8-4e1a-bdf0-f50457dafb92.PNG)
+
+The password to the Administrator account is Ticketmaster1968 <br>
+
+![Mikey_being_a_savage](https://user-images.githubusercontent.com/110210595/187827646-fbdfbbae-715a-49ca-8417-18d524596a2b.png)
+
+At this point I use <em><strong>psexec.py</em></strong> this is a priviledge escalation tool to use once you have credentials. Also can be used for commands in a windows machine for admins. You can find it here https://github.com/SecureAuthCorp/impacket and find out more about it here https://www.sans.org/blog/psexec-python-rocks/ Which we do have now.<br>
+
+I use `/usr/share/doc/python3-impacket/examples/psexec.py Administrator:Ticketmaster1968@10.10.10.100`<br>
+And it's a success!<br>
+
+![psexec py_admin](https://user-images.githubusercontent.com/110210595/187827819-303b6624-c4c9-4530-8f7f-1ca22a09a46a.PNG)
+
+We are <em><strong>nt authority\system</em></strong> which is <em><strong>equivalent</em></strong> to root on linux.<br>
+
+I looked around and found the C:\Users\Administrator\Desktop used `dir` and we see the <em><strong>root.txt</em></strong> file.<br>
+
+![root txt_results](https://user-images.githubusercontent.com/110210595/187827976-360b5df5-3b71-4a71-b0cb-5c47b1c3514b.PNG)
+
+
+https://user-images.githubusercontent.com/110210595/187828063-21c9988b-dae8-400e-93f9-a41268c0f549.MOV
+
+
+Take a break and go throw some ninja stars or something :)
 
