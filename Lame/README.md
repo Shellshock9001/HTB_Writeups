@@ -77,7 +77,7 @@ Shell (b) worked!
 
 ![gtfo_bin_exploit](https://user-images.githubusercontent.com/110210595/186280127-2e9c0379-cf61-4a2b-960e-fdb45b73c42a.png)
 
-we can now `cd root` and see what is there which is the <em><strong>root.txt</em></strong>flag!<br>
+we can now `cd root` and see what is there which is the <em><strong>root.txt</em></strong> flag!<br>
 we have successfully rooted this box!
 
 ![root.txt](https://user-images.githubusercontent.com/110210595/186280195-f349b931-70e6-47ae-ba72-77eb1769c8f0.png)
