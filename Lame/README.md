@@ -16,7 +16,7 @@ again then go back and try to repeat your steps to make sure you didn't make a t
 
 I see that smb is open. 139/445. I run `smbmap -H 10.10.10` and get back some users.
 
-![image](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
+![smbmap_results](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
 
 we can see that tmp is <em><strong>READ, WRITE</em></strong>. Lets login and see what we can find.<br>
 I use `smbclient \\\\10.10.10.3\\tmp` and we get a hit.<br>
