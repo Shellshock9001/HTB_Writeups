@@ -2,13 +2,11 @@
 
 ![Active_call_Card](https://user-images.githubusercontent.com/110210595/187805520-c29bf5fc-ce6e-484b-a14b-33bd87e78c78.png)
 
-# nmap Scan 
 Started off with a nmap. `nmap -Pn -T5 -sV -sC -A -p- -oN active_nmap.txt 10.10.10.100`<br>
 Here is the results:
 
 ![nmap_scan](https://user-images.githubusercontent.com/110210595/187805488-8fc95761-8751-42fe-a1cf-1533ec9efcd6.png)
 
-# smbmap
 We see that smb is open.<br>
 I run `smbmap -H 10.10.10.100`<br>
 
@@ -17,7 +15,6 @@ I run `smbmap -H 10.10.10.100`<br>
 We notice the domain name is active.htb This is great because we'll need this for the kerberos attack. We still need credentials.<br>
 Only share we have access to is <em><strong>Replication</em></strong> and its only <em><strong>READ</em></strong> acces.<br>
 
-# smbclient
 I use `smbclient \\\\10.10.10.100\\Replication`<br>
 I log in without a password and just press `ENTER` to hope anonymous log in is enabled.<br>
 
@@ -33,13 +30,11 @@ Used `get Groups.xml`<br>
 
 ![Groups_xml_results](https://user-images.githubusercontent.com/110210595/187825600-fece54cb-5614-46d0-afd7-846d569fc7ff.PNG)
 
-
 We could see<br>
 <em><strong>cpassword</em></strong> = "edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ" <br>
 <em><strong>userName</em></strong> = active.htb\SVC_TGS <br>
 Looks like we definitely found some credentials. But I'm not sure what format that cpassword is. I go to https://book.hacktricks.xyz/welcome/readme and do some research. Looks like cpassword is used in a Groups.xml file which is what we found. Didn't see much else so I used the same site https://book.hacktricks.xyz/welcome/readme but this time searched for Groups.xml file and we find much more info on it. Looks to be a cached GPP Password. 
 https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation?q=Groups.xml#cached-gpp-pasword<br>
-
 
 I use `gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ`<br>
 
@@ -57,7 +52,7 @@ That section was actually only to list the shared files. Not connect. Scroll dow
 
 ![smbclient_Users_errors](https://user-images.githubusercontent.com/110210595/187826348-922411ac-76f4-4b5a-a3e4-53b9c19f6c99.PNG)
 
-I used `smbclient -U SVC_TGS \\\\10.10.10.100\\Users`<br>
+I used `smbclient -U SVC_TGS \\\\10.10.10.100\\Users` <br>
 
 ![smbclient_Users_SVC_TGS_results](https://user-images.githubusercontent.com/110210595/187826416-57f0c5b8-729a-4d77-a917-02afde46da56.PNG)
 
@@ -110,9 +105,6 @@ I looked around and found the C:\Users\Administrator\Desktop used `dir` and we s
 
 ![root txt_results](https://user-images.githubusercontent.com/110210595/187827976-360b5df5-3b71-4a71-b0cb-5c47b1c3514b.PNG)
 
-
 https://user-images.githubusercontent.com/110210595/187828063-21c9988b-dae8-400e-93f9-a41268c0f549.MOV
 
-
 Take a break and go throw some ninja stars or something :)
-
