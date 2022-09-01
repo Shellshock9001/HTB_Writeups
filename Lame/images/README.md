@@ -10,19 +10,19 @@
 
 ![smbclient\tmp_results](https://user-images.githubusercontent.com/110210595/186279990-d0c780e7-424c-43e0-b62f-eea7d5ccf836.png)
 
+![proof_of_user_shell](https://user-images.githubusercontent.com/110210595/186280044-7ad463f8-0082-4d42-9e21-3e0b734cc0ed.png)
+
 ![COWABUNGA](https://user-images.githubusercontent.com/110210595/186280016-5a9d0378-3c30-4f95-89e0-c68eea7c86d1.png)
 
-![image](https://user-images.githubusercontent.com/110210595/186280044-7ad463f8-0082-4d42-9e21-3e0b734cc0ed.png)
-
-![image](https://user-images.githubusercontent.com/110210595/186280050-4c2d9a7e-9b61-4b18-9d51-f14d3659c34f.png)
+![user_txt](https://user-images.githubusercontent.com/110210595/186280050-4c2d9a7e-9b61-4b18-9d51-f14d3659c34f.png)
 
 ![Mikey_being_a_savage](https://user-images.githubusercontent.com/110210595/186280056-9b22e873-4987-4845-8417-ec2a8581c9ab.png)
 
-![image](https://user-images.githubusercontent.com/110210595/186280090-9325ff31-2274-4c8b-a279-f6133ef3a11b.png)
+![exploit_suggester_results_pt-1](https://user-images.githubusercontent.com/110210595/186280090-9325ff31-2274-4c8b-a279-f6133ef3a11b.png)
 
-![image](https://user-images.githubusercontent.com/110210595/186280109-1ba8b1b6-6a8c-43ec-87f5-d5e0b7eac263.png)
+![[exploit_suggester_results_pt-2](https://user-images.githubusercontent.com/110210595/186280109-1ba8b1b6-6a8c-43ec-87f5-d5e0b7eac263.png)
 
-![image](https://user-images.githubusercontent.com/110210595/186280119-1ee8d359-4e1a-4a25-8040-728189330987.png)
+![[exploit_suggester_results_pt-3](https://user-images.githubusercontent.com/110210595/186280119-1ee8d359-4e1a-4a25-8040-728189330987.png)
 
 ![image](https://user-images.githubusercontent.com/110210595/186280127-2e9c0379-cf61-4a2b-960e-fdb45b73c42a.png)
 
