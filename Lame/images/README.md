@@ -28,4 +28,4 @@
 
 ![root.txt](https://user-images.githubusercontent.com/110210595/186280195-f349b931-70e6-47ae-ba72-77eb1769c8f0.png)
 
-![SHELLSHOCKED]https://user-images.githubusercontent.com/110210595/187824465-4bd9fb43-dd40-4832-860e-a31d371159dc.MOV
+![SHELLSHOCKED](https://user-images.githubusercontent.com/110210595/187824465-4bd9fb43-dd40-4832-860e-a31d371159dc.MOV)
