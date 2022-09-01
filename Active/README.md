@@ -50,7 +50,7 @@ UserName = <em><strong>active.htb\SVC_TGS</em></strong><br>
 Password = <em><strong>GPPstillStandingStrong2k18</em></strong><br>
 
 # Backtrack - smbclient Users
-I remember there were other Users in the smbmap and saw <em><strong>Users</em></strong>. I went back to https://book.hacktricks.xyz/welcome/readme and typed in smbclient users and found a "List shared folders" sections. You can log in to the smbclient using a user parameter if you know the password. Which we do.<br>
+I remember there were other Users in the smbmap and saw <em><strong>Users</em></strong>. I went back to https://book.hacktricks.xyz/welcome/readme and typed in smbclient users and found a "List shared folders" sections. You can log in to the smbclient using a user parameter if you know the password. Which we do.
 That section was actually only to list the shared files. Not connect. Scroll down a bit to Connect/List a shared folder. You'll see this is how to connect. I left the password out because I kept getting errors with it.<br>
 
 ![smbclient_Users_errors](https://user-images.githubusercontent.com/110210595/187826348-922411ac-76f4-4b5a-a3e4-53b9c19f6c99.PNG)
