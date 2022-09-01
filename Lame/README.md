@@ -71,7 +71,7 @@ I use `./linpeas.sh` and it runs no problem. We get back a lot of results. Sever
 
 <em><strong>/usr/bin/nmap suid</em></strong><br>
 I head over to https://gtfobins.github.io/ and search for <em><strong>nmap</em></strong><br>
-I 'cd /usr/bin' where the suid is located.<br>
+I `cd /usr/bin` where the suid is located.<br>
 I start off with shell code (a) and nothing happened. So I keep going down the list.<br>
 Shell (b) worked!
 
