@@ -82,4 +82,4 @@ we have successfully rooted this box!
 
 ![root.txt](https://user-images.githubusercontent.com/110210595/186280195-f349b931-70e6-47ae-ba72-77eb1769c8f0.png)
 
-https://user-images.githubusercontent.com/110210595/187824599-0061a62c-4855-4f82-826b-31f863f9a6b4.MOV
+https://user-images.githubusercontent.com/110210595/187829349-72c424cf-f323-4c4e-97b4-2c8bc3a8c599.MOV
