@@ -33,8 +33,8 @@ Used `get Groups.xml`<br>
 
 
 We could see<br>
-<em><strong>cpassword</em></strong> = "edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ"<br>
-<em><strong>userName</em></strong> = active.htb\SVC_TGS<br>
+<em><strong>cpassword</em></strong> = "edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ" <br>
+<em><strong>userName</em></strong> = active.htb\SVC_TGS <br>
 Looks like we definitely found some credentials. But I'm not sure what format that cpassword is. I go to https://book.hacktricks.xyz/welcome/readme and do some research. Looks like cpassword is used in a Groups.xml file which is what we found. Didn't see much else so I used the same site https://book.hacktricks.xyz/welcome/readme but this time searched for Groups.xml file and we find much more info on it. Looks to be a cached GPP Password. 
 https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation?q=Groups.xml#cached-gpp-pasword<br>
 
