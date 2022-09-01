@@ -23,7 +23,7 @@ I use `smbclient \\\\10.10.10.3\\tmp` and we get a hit.<br>
 I use `ls` to see what we can find. Unfortunately there is nothing here either.<br>
 We could use put and get files here but there is no port 80 open for us to execute the files to gain a shell from here. Some bad luck but we got more info so lets keep looking.
 
-![image](https://user-images.githubusercontent.com/110210595/185814036-42698e61-b4e6-4be4-84de-df540f801f33.png)
+![smbclient\tmp_results](https://user-images.githubusercontent.com/110210595/186279990-d0c780e7-424c-43e0-b62f-eea7d5ccf836.png)
 
 I go back to the nmap results and see port 3632 is open and it gave us the version of application running. <em><strong>distccd v1</em></strong><br>
 I go to google and search for "<em><strong>distccd v1 exploit</em></strong>" first link brings us to https://gist.github.com/DarkCoderSc/4dbf6229a93e75c3bdf6b467e67a9855<br>
