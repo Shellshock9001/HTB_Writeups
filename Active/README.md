@@ -15,6 +15,7 @@ I run `smbmap -H 10.10.10.100`<br>
 We notice the domain name is active.htb. This is great because we'll need this for the kerberos attack. We still need credentials.<br>
 Only share we have access to is <em><strong>Replication</em></strong> and its only <em><strong>READ</em></strong> acces.<br>
 
+# smbclient
 I use `smbclient \\\\10.10.10.100\\Replication`<br>
 I log in without a password and just press `ENTER` to hope anonymous log in is enabled.<br>
 
@@ -29,3 +30,23 @@ Used `get Groups.xml`<br>
 `cat Groups.xml` didn't work hehe.<br>
 
 ![Groups_xml_results](https://user-images.githubusercontent.com/110210595/187825600-fece54cb-5614-46d0-afd7-846d569fc7ff.PNG)
+
+
+We could see <em><strong>cpassword</em></strong> = "edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ"
+<em><strong>userName</em></strong> = active.htb\SVC_TGS<br>
+Looks like we definitely found some credentials. But I'm not sure what format that cpassword is. I go to https://book.hacktricks.xyz/welcome/readme and do some research. Looks like cpassword is used in a Groups.xml file which is what we found. Didn't see much else so I used the same site https://book.hacktricks.xyz/welcome/readme but this time searched for Groups.xml file and we find much more info on it. Looks to be a cached GPP Password. 
+https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation?q=Groups.xml#cached-gpp-pasword<br>
+
+
+I use `gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ`<br>
+
+![gpp_decrypt_results](https://user-images.githubusercontent.com/110210595/187825800-edb19a2c-1798-41a7-9866-1c7489bd0fc3.PNG)
+
+The password is <em><strong>GPPstillStandingStrong2k18</em></strong><br>
+
+Now we have -<br> 
+UserName = <em><strong>active.htb\SVC_TGS</em></strong><br>
+Password = <em><strong>GPPstillStandingStrong2k18</em></strong><br>
+
+
+
