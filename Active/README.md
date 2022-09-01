@@ -64,7 +64,7 @@ We see the <em><strong>user.txt</em></strong> file.<br>
 
 ![user_txt_found](https://user-images.githubusercontent.com/110210595/187826827-eeeb52cf-12c8-4d15-9772-234b136433e7.PNG)
 
-I use a `get user.txt`
+I use a `get user.txt` <br>
 `cat user.txt`
 
 ![user txt_results](https://user-images.githubusercontent.com/110210595/187826950-74ff1bbd-0926-492d-bf51-f0be10920c75.PNG)
