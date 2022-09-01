@@ -24,7 +24,7 @@
 
 ![[exploit_suggester_results_pt-3](https://user-images.githubusercontent.com/110210595/186280119-1ee8d359-4e1a-4a25-8040-728189330987.png)
 
-![image](https://user-images.githubusercontent.com/110210595/186280127-2e9c0379-cf61-4a2b-960e-fdb45b73c42a.png)
+![gtfo_bin_exploit](https://user-images.githubusercontent.com/110210595/186280127-2e9c0379-cf61-4a2b-960e-fdb45b73c42a.png)
 
 ![Shellshocked](https://user-images.githubusercontent.com/110210595/186280178-cb30a837-8e63-4c4c-9800-c85934cc0ded.png)
 
