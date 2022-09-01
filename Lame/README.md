@@ -50,7 +50,7 @@ Let's upgrade the shell. I used the following.<br>
 `enter`<br>
 
 We're a normal user daemon. I started off with `sudo -l` but it asked for a password. Let's move on.
-I look around a bit and `cd /home` directory and do a `ls` and see what's there. Nothing good in the user directory but I did go into makis and find the <em><strong>user.txt</em></strong> file. I use <em><strong>cat user.txt</em></strong> at it and we get out our first flag.  
+I look around a bit and `cd /home` directory and do a `ls` and see what's there. Nothing good in the user directory but I did go into makis and find the <em><strong>user.txt</em></strong> file. I use <em><strong>cat user.txt</em></strong> at it and we get out our first flag.
 
 ![user_txt](https://user-images.githubusercontent.com/110210595/186280050-4c2d9a7e-9b61-4b18-9d51-f14d3659c34f.png)
 
