@@ -6,10 +6,10 @@ Here is the results:
 
 ![nmap_scan](https://user-images.githubusercontent.com/110210595/187805488-8fc95761-8751-42fe-a1cf-1533ec9efcd6.png)
 
+# smbmap
 We see that smb is open.<br>
 I run `smbmap -H 10.10.10.100`<br>
 
-# smbmap
 ![smbmap_results](https://user-images.githubusercontent.com/110210595/187825021-0c32621b-4d50-41f8-ab62-2bc20b94d9cd.PNG)
 
 We notice the domain name is active.htb. This is great because we'll need this for the kerberos attack. We still need credentials.<br>
