@@ -6,7 +6,7 @@
 
 ![nmap_scan_pt2](https://user-images.githubusercontent.com/110210595/186279953-2fb886f4-5574-4cb1-b27b-306826c0b9ca.png)
 
-![image](https://user-images.githubusercontent.com/110210595/186279977-8f26ecb4-399f-4cf4-9b7e-302562098146.png)
+![smbmap_results](https://user-images.githubusercontent.com/110210595/185814007-319d68bc-004b-4242-b3e0-a943b4eda8e9.png)
 
 ![image](https://user-images.githubusercontent.com/110210595/186279990-d0c780e7-424c-43e0-b62f-eea7d5ccf836.png)
 
