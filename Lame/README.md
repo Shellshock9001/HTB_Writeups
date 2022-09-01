@@ -80,4 +80,6 @@ Shell (b) worked!
 we can now 'cd /root' and see what is there which is the <em><strong>root.txt</em></strong>flag!<br>
 we have successfully rooted this box!
 
-![image](https://user-images.githubusercontent.com/110210595/185814307-20443976-cd82-46bb-8929-1e17fb164988.png)
+![root.txt](https://user-images.githubusercontent.com/110210595/186280195-f349b931-70e6-47ae-ba72-77eb1769c8f0.png)
+
+![Shellshocked](https://user-images.githubusercontent.com/110210595/186280178-cb30a837-8e63-4c4c-9800-c85934cc0ded.png)
