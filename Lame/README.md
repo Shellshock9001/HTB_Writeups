@@ -3,6 +3,9 @@
 
 ![Lame_info_card](https://user-images.githubusercontent.com/110210595/187806371-c87c74bd-6111-458a-8cd7-62a899083d09.png)
 
+![image](https://user-images.githubusercontent.com/110210595/187806673-42df1db9-0325-496e-8870-e9efe4052782.png)
+
+
 Started off with a nmap scan `nmap -Pn -T5 -sV -sC -A -p- -oN lame_nmap.txt 10.10.10.3`<br>
 While that was scanning I went to go check out to see if the website is up. But I don't get anything back and you'll see why when the results are done.
 We get back some nice info to start us off.
