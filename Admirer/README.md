@@ -121,3 +121,10 @@ There was also a note on the bottom of this file.<br>
 // TODO: Finish implementing this or find a better open source alternative<br>
 Whoever the dev was didn't finish it and maybe using an insecure application.<br>
 
+With everything that we found I looked back and thought about running ffuf against these two new folders that we found thanks to html.tar.gz<br>
+<em><strong>utility-scripts</em></strong><br>
+<em><strong>w4ld0s_s3cr3t_d1r</em></strong><br>
+
+I use `ffuf -c -u http://10.10.10.187/utility-scripts/FUZZ -w /home/Shellshock/Documents/wordlists//directory-list-2.3-medium.txt:FUZZ -t 60 -o fuff_admirer/utility-scripts/_results -e .txt,.php,.zip,.gz`
+I added that .gz after we found that html.tar.gz 
+Didn't find anything here. I was stuck at this point. I found credentials but no where to plug them into. And my scans weren't picking anything up. I went to google to try and find some help, a write up. This is perfectly fine, don't think you will ever know how to do everything and know everything. There will be times when you need help. Just don't be to proud to ask. I went to ippsec. You can find his YouTube channel here. https://www.youtube.com/c/ippsec I like his videos because he will go through every step as if you don't know anything at all about the machine. I've seen other channels were they go straight through the machine as if the process was known. I learned a lot from this video. I learned the power of a good wordlist is crucial. One wordlist found the directory where as the other wordlist did not. It is also important to look at more than one writeup for the same machine, because everyone will have different methods to complete the box, the more methods you learn the more you can broaden your toolset. Lets get back to the box now.
