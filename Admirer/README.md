@@ -51,7 +51,7 @@ after this I go check out the <em><strong>robots.txt</em></strong> file
 
 Don't get much 
 User-agent: *
-# This folder contains personal contacts and creds, so no one -not even robots- should see it - waldo
+#This folder contains personal contacts and creds, so no one -not even robots- should see it - waldo
 Disallow: /admin-dir
 
 
