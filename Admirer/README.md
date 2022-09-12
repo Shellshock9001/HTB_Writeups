@@ -38,20 +38,20 @@ There also seemed to be a lot of extra content that wasn't on the original page.
 I found a few directories
 images/fulls
 images/thumbs
-and a <!--scripts --> section
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.poptrox.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+and a <!--scripts --> section<br>
+<!-- Scripts --><br>
+<script src="assets/js/jquery.min.js"></script><br>
+<script src="assets/js/jquery.poptrox.min.js"></script><br>
+<script src="assets/js/browser.min.js"></script><br>
+<script src="assets/js/breakpoints.min.js"></script><br>
+<script src="assets/js/util.js"></script><br>
+<script src="assets/js/main.js"></script><br>
 
-after this I go check out the <em><strong>robots.txt</em></strong> file
+after this I go check out the <em><strong>robots.txt</em></strong> file<br>
 
 Don't get much<br>
 User-agent: *<br>
 #This folder contains personal contacts and creds, so no one -not even robots- should see it - waldo
-Disallow: /admin-dir
+Disallow: /admin-dir<br>
 
 
