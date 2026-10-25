@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="390" viewBox="0 0 1280 390" role="img" aria-labelledby="t d">
+<title id="t">Ghostlink — field notes</title><desc id="d">Original midnight blue and purple cover artwork for ShellShockHive HTB Writeups</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071523"/><stop offset=".55" stop-color="#17112e"/><stop offset="1" stop-color="#063642"/></linearGradient><radialGradient id="halo"><stop stop-color="#4b8eff" stop-opacity=".26"/><stop offset="1" stop-color="#4b8eff" stop-opacity="0"/></radialGradient><linearGradient id="stroke"><stop stop-color="#64eff2"/><stop offset=".5" stop-color="#ae84ff"/><stop offset="1" stop-color="#fa719d"/></linearGradient></defs>
+<rect width="1280" height="390" fill="url(#bg)"/><circle cx="1020" cy="140" r="290" fill="url(#halo)"/>
+<g fill="none" stroke="#79c5ee" stroke-opacity=".13" stroke-width="1"><path d="M0 55H1280M0 110H1280M0 165H1280M0 220H1280M0 275H1280M0 330H1280"/><path d="M55 0V390M110 0V390M165 0V390M220 0V390M275 0V390M330 0V390M385 0V390M440 0V390M495 0V390M550 0V390M605 0V390M660 0V390M715 0V390M770 0V390M825 0V390M880 0V390M935 0V390M990 0V390M1045 0V390M1100 0V390M1155 0V390M1210 0V390"/></g>
+<g stroke="url(#stroke)" fill="none" stroke-width="3"><circle cx="1040" cy="195" r="119" stroke-dasharray="20 14" opacity=".85"/><circle cx="1040" cy="195" r="91" opacity=".58"/><path d="M982 198c0-47 23-78 59-78s59 31 59 78v64l-20-14-19 14-20-14-20 14-19-14-20 14Z" fill="#6ee6ef" fill-opacity=".11"/><path d="M991 197c0-44 21-68 50-68s50 24 50 68v46l-17-11-16 11-17-11-17 11-16-11-17 11Z" opacity=".65"/></g><g fill="#d7fcff"><ellipse cx="1024" cy="192" rx="7" ry="11"/><ellipse cx="1057" cy="192" rx="7" ry="11"/></g><path d="M1023 216q18 14 35 0" stroke="#b6f3fd" stroke-width="4" fill="none" stroke-linecap="round"/>
+<rect x="64" y="62" width="251" height="33" rx="7" fill="#44c7ce" fill-opacity=".11" stroke="#5bebed" stroke-opacity=".65"/>
+<text x="80" y="84" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="2" fill="#7fe6f3">SHELLSHOCKHIVE / HTB</text>
+<text x="63" y="194" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="91" letter-spacing="2" fill="#f5f8ff">GHOSTLINK</text>
+<path d="M67 211H765" stroke="url(#stroke)" stroke-width="4" stroke-linecap="round"/>
+<text x="65" y="257" font-family="Arial,Helvetica,sans-serif" font-size="23" letter-spacing="3" fill="#a8b4db">FIELD NOTES AND REPRODUCTION</text>
+<text x="65" y="315" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#d5a5fa">WRITEUP EMBARGO · ACTIVE MACHINE</text>
+<rect x="1048" y="18" width="214" height="32" rx="16" fill="#25324c" stroke="#596080"/><text x="1067" y="39" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#dce5ff">RELEASE AFTER RETIREMENT</text>
+</svg>
